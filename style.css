@@ -1,0 +1,223 @@
+/*-----------------------------------------------------------------------------------
+
+	Theme Name: Vinny Singh - Manage Custom Meta via Front End Part 3
+	Theme URI: http://www.tutorials.vinnySingh.co/frontend/
+	Description: The Theme used for the Tutorial 'Insert Post via Front End Tutorial' for WPTuts+
+	Author: Vinny Singh
+	Author URI: http://www.VinnySingh.co
+	Version: 1.0
+
+----------------------------------------------------------------------------------- */
+
+/*	---------------------------------------------------------------------	* 
+ *	Reset
+ *	---------------------------------------------------------------------	*/
+
+	htmal, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } :focus { outline: 0; } ins { text-decoration: none; } del { text-decoration: line-through; } table { border-collapse: collapse; border-spacing: 0; }
+
+	.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+/*	---------------------------------------------------------------------	* 
+ *	General Styling
+ *	---------------------------------------------------------------------	*/
+
+ 	body{
+        background:url(images/bg.png) repeat;
+        font:12px/20px Arial, Helvetica, sans-serif;
+        margin:0;
+        padding:0;
+ 	}
+
+    .container {
+        width:960px;
+        margin-left:auto;
+        margin-right:auto;  
+     }
+
+    hr {
+		border-top:1px solid #d8dbe0;
+ 		border-bottom:1px solid #fafafa;
+ 		border-left:none;
+ 		border-right:none; 	
+    }
+
+    p { margin-bottom:20px; }
+
+    #logo {
+        margin:30px 0;
+        float:left;
+    }
+
+    #navigation {
+        margin:40px 20px 0 0;
+        float:right;
+    }
+    
+    #navigation a {
+        color:#444444;
+        text-decoration: none;
+    }
+
+    #navigation a:hover {
+        text-decoration: underline;
+    }
+
+    #primary {
+    	width:940px;
+    	float:left;
+    	margin:30px 10px;
+    }
+
+    #sidebar {
+    	width:300px;
+    	float:right;
+    	margin:30px 10px;
+    }
+
+    .hentry { margin-bottom:20px; }
+
+    .post-title h2 { 
+        color:#444444;
+    	font-size:22px;
+    	margin:0 0 20px 0;
+    }
+
+    .post-title h2 a { 
+        color:#444444;
+        text-decoration: none;
+    }
+
+    .post-title h2 a:hover { text-decoration: underline; }
+
+    .post-entry {
+    	background: #fff;
+    	border:1px solid #dbdbdb;
+    	padding:20px;
+    }
+
+    a.more-link {
+    	color:#444444;
+    	text-decoration: none;
+    	float: right;
+    }
+
+    a.more-link:hover { text-decoration: underline; }
+
+    div.primary_navigation {
+        width:940px;
+        float:left;
+        margin-top:5px;
+    }
+
+    div.primary_navigation span {
+        text-indent: -9999px;
+        width:18px;
+        height: 18px;
+        display: block;
+        margin:0 10px;
+    }
+
+    div.primary_navigation span.nav-previous { float:left; }
+    div.primary_navigation span.nav-next { float:right; }
+
+    div.primary_navigation span.nav-next a { 
+        display: block;
+        background:url(images/next-icon.png) no-repeat; }
+
+    div.primary_navigation span.nav-previous a {
+        display: block;
+        background:url(images/prev-icon.png) no-repeat;
+    }
+
+    form#primaryPostForm {
+        padding:20px;
+        background:#ffffff;
+        border:1px solid #dbdbdb;
+    }
+
+    form#primaryPostForm label {
+        margin:8px 50px 0 0;
+        font-weight:bold;
+        display:block;
+        float:left;
+    }
+
+    form#primaryPostForm input, form#primaryPostForm textarea {
+        float:right;
+        width:80%;
+        font-family: Arial, Helvetica, sans-serif;
+        padding:5px;
+    }
+
+    form#primaryPostForm fieldset { margin:10px 0 10px 0; }
+
+    form#primaryPostForm button { float:right; }
+
+    table {
+        width:100%;
+        background:#fff;
+        border:1px solid #dbdbdb;
+    }
+
+    table th, table th {
+        width:30%;
+    }
+
+    table th {
+        padding:15px;
+        border:1px solid #dbdbdb;
+        background: -moz-linear-gradient(
+        top,
+        #fafafa 0%,
+        #f6f6f6);       
+        background: -webkit-gradient(
+            linear, left top, left bottom, 
+            from(#fafafa),
+            to(#f6f6f6));
+    }
+
+    table td {
+        padding:10px;
+        border: 1px solid #dbdbdb;
+    }
+
+    span.error, form#primaryPostForm label.error {
+        width:50%;
+        float: right;
+        display: block;
+        padding: 0.8em;
+        margin: 10px 0 10px 0;
+        line-height: 1.6em;
+        border-radius: 4px!important;
+        -webkit-border-radius: 4px!important;
+        -moz-border-radius: 4px!important;
+        -o-border-radius: 4px!important;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+        -o-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+        background: #ffe6e3;
+        border: 1px solid #f2c3bf;
+        color: #bf210e;
+        text-align: center;
+    }
+
+    span.success {
+        display:block;
+        text-align: center;
+        background: #edfdd3;
+        border: 1px solid #c4dba0;
+        color: #657e3c;
+        padding: 0.8em;
+        margin: 0 0 1.5em 0;
+        line-height: 1.6em;     
+        border-radius: 4px!important;
+            -webkit-border-radius: 4px!important;
+            -moz-border-radius: 4px!important;
+            -o-border-radius: 4px!important;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+            -o-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
